@@ -1,0 +1,19 @@
+pandas==1.0.3
+matplotlib==3.3.1
+scikit-learn 0.23.2
+seaborn==0.10.1
+spacy==2.3.1
+tqdm==4.46.0
+gensim==3.8.0
+polyglot==16.7.4
+demoji==0.2.1
+ftfy==5.8
+langid==1.1.6
+langdetect==1.0.7
+fasttext==0.9.2
+ipywidgets==7.6.3
+pycontractions==2.0.1
+nltk==3.4.5
+imbalanced-learn==0.7.0
+transformers==4.2.2
+torch==1.7.0

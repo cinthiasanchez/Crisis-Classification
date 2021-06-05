@@ -1,3 +1,5 @@
+## Polyglot requirements
+
 For using Polyglot library is necessary to download whl files,  https://www.lfd.uci.edu/~gohlke/pythonlibs/#pycld2
  
 ```bat 

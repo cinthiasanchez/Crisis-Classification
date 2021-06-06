@@ -1,5 +1,5 @@
 # Unified Multi-Crisis Dataset
-To create a multilingual and multi-domain crisis dataset, we consolidated data from the following 7 public sources, totaling 165,200 tweets:
+To create a multilingual and multi-domain crisis dataset, we consolidated data from the following 7 public sources, totaling 164,625 tweets:
 
 **CrisisLexT6 [1]**
 > English tweets from six crisis events in 2012 and 2013, occurring in USA, Canada, and Australia. These events belong to different crisis domains such as hurricane, bombing, tornado, explosion and flood. Tweets were labeled by relatedness with each event as *on-topic* or *off-topic*.

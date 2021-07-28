@@ -30,14 +30,14 @@ Considering this step, we found 1,135 near duplicates in English (2.1% of this l
 
 **3. Tweet Relabeling**
 
-We relabeled 328 messages from CrisisMMD and CrisisLexT26 datasets, updating the label mapped initially as negative class to ***related***.
+We relabeled 328 messages from CrisisMMD and CrisisLexT26 datasets, updating the label mapped initially as negative class to **related**.
 In detail, we relabeled 313 *not informative* messages from CrisisMMD dataset that could be considered as crisis related
 because this label is more specific compared to other datasets such as CrisisLexT26 (e.g., *Related - but not informative* label). 
-For example, *Volunteers filling semi trailer for Mexico earthquake relief https://t.co/rHt9ZzLeyH https://t.co/xmLr1CYie8*. 
+For example, ***Volunteers filling semi trailer for Mexico earthquake relief https://t.co/rHt9ZzLeyH https://t.co/xmLr1CYie8***. 
 Furthermore, we relabeled 15 *Not applicable* tweets (too short; not readable; or other issues) from the CrisisLexT26 dataset,
 when the detected language was different from English. 
-For example, *Una explosión en Texas provocó al menos 5 muertos y más de 130 heridos La Policía de Waco dio la primera cifra... http://t.co/4TRPu0fO04
-(**Translation:** An explosion in Texas caused at least 5 deaths and more than 130 injured Waco Police gave the first figure ... http://t.co/4TRPu0fO04)*. 
+For example, ***Una explosión en Texas provocó al menos 5 muertos y más de 130 heridos La Policía de Waco dio la primera cifra... http://t.co/4TRPu0fO04***
+(*Translation:* ***An explosion in Texas caused at least 5 deaths and more than 130 injured Waco Police gave the first figure ... http://t.co/4TRPu0fO04)***. 
 
 
 **Summary of the experimental subset of data.** After these preprocessing steps, we selected the crisis events with at least 100 instances per language and domain. 

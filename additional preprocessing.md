@@ -25,8 +25,8 @@ focused on conversations and our work consider single messages like the other da
 We removed 9,926 messages with duplicated clean text (mainly retweets).
 To avoid having similar messages multiple times that could overestimating our result, we further removed near-duplicated messages. 
 Thus, we computed the cosine similarity over the original text and removed those with a score greater than 0.75, maintaining only one message as unique.
-Considering this step, we found 1,135 near duplicates in English (2.1\% of this language),
-118 in Spanish (1.5\% of Spanish messages) and 313 messages in Italian (5.0\% of Italian messages).
+Considering this step, we found 1,135 near duplicates in English (2.1% of this language),
+118 in Spanish (1.5% of Spanish messages) and 313 messages in Italian (5.0% of Italian messages).
 
 **3. Tweet Relabeling**
 

@@ -11,7 +11,9 @@ We first cleaned the text by removing urls, user mentions, hashtags, retweet sym
 emojis, emoticons, numbers and symbols, and converted it to lowercase. 
 In the case of MT+GloVe model, we replaced these strings on the translated text by special tokens (e.g., &lt;hashtag>) 
 motivated on the GloVe script for preprocessing Twitter data [1].
+
 We then expanded English contractions to minimize the amount of Out-of-Vocabulary words when using the pretrained data models. 
+For example, *let's* is converted to *let us* and *isn't'* to *is not*.
 To accomplish this, we used a python library called **pycontractions**, 
 taking the *precise* version and the semantic model *glove-twitter-100*. 
 
@@ -25,8 +27,15 @@ focused on conversations and our work consider single messages like the other da
 We removed 9,926 messages with duplicated clean text (mainly retweets).
 To avoid having similar messages multiple times that could overestimating our result, we further removed near-duplicated messages. 
 Thus, we computed the cosine similarity over the original text and removed those with a score greater than 0.75, maintaining only one message as unique.
+The following table presents examples of detected near duplicates by language.
 Considering this step, we found 1,135 near duplicates in English (2.1% of this language),
 118 in Spanish (1.5% of Spanish messages) and 313 messages in Italian (5.0% of Italian messages).
+
+| Tweet                                                                                                                                       | Near duplicate                                                                                                                     | Lang. |
+|---------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|:-----:|
+| Clean up operation is under the in north east australia as flood water begin to recede.                                                     | CLEAN-UP OPERATION IS UNDERWAY IN NORTH EAST AUSTRALIA AS FLOOD WATERS BEGIN TO RECEDE                                             |   EN  |
+| RT @24HorasTVN: AHORA: SHOA publica en este momento, que hay alerta de tsunami para #Chile por terremoto en #CostaRica http://t.co/N3brPnyY | RT @24HorasTVN:SHOA publica en este momento, q' hay alerta d tsunami para #Chile por terremoto en #CostaRica http://t.co/1A8FwqwV” |   ES  |
+| altra scossa forte. #terremoto                                                                                                              | #terremoto altra forte scossa.                                                                                                     |   IT  |
 
 **3. Tweet Relabeling**
 
@@ -40,7 +49,9 @@ For example, ***Una explosión en Texas provocó al menos 5 muertos y más de 13
 (*Translation:* ***An explosion in Texas caused at least 5 deaths and more than 130 injured Waco Police gave the first figure ... http://t.co/4TRPu0fO04)***. 
 
 
-**Summary of the experimental subset of data.** After these preprocessing steps, we selected the crisis events with at least 100 instances per language and domain. 
+**Summary of the experimental subset of data.** 
+
+After these preprocessing steps, we selected the crisis events with at least 100 instances per language and domain. 
 The following table shows a summary of the resulting subset of data used in our experiments.
 This compilation of 67,001 instances covers crisis events from various continents, 
 different hazard categories and subcategories, temporal development and geographic spread. 

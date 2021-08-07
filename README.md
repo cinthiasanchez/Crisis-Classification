@@ -9,7 +9,7 @@ To create a multilingual and multi-domain crisis dataset, we consolidated data f
 
 - **ChileEarthquakeT1 [4]:** Spanish tweets from the 2010 Chilean earthquake, labeled by relatedness with the event as *relevant* or *not relevant*.
     
-- **CrisisNLP_R1 [5]:** Tweets from 19 crises that occurred in different countries between 2013 and 2015. Tweets were annotated with a set of categories according to the information type such as *Injured or dead people*, *Missing, trapped, or found people*, *Displaced people and evacuations*, *Infrastructure and utilities damage*, among others. We used both datasets, annotated by paid workers and annotated by volunteers.  
+- **CrisisNLP_R1 [5]:** Tweets from 19 crises that occurred in different countries between 2013 and 2015. Tweets were annotated with a set of categories according to the information type such as *Injured or dead people*, *Displaced people and evacuations*, *Infrastructure and utilities damage*, among others. We used both datasets, annotated by paid workers and annotated by volunteers.  
 
 - **CrisisMMD [6]:** English tweets with images collected during seven natural disasters in 2017, occurring in different countries. These events belong to different crisis domains such as hurricane, earthquake, wildfire and flood. Tweets were labeled by informativeness (tweet or image), humanitarian categories (tweet or image), and damage severity (image). Regarding informativeness, tweets were labeled as *informative* or *not informative*.
     

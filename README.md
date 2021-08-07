@@ -1,29 +1,32 @@
-# Unified Multi-Crisis Dataset
+# Unified Multi-Crisis Dataset description
 To create a multilingual and multi-domain crisis dataset, we consolidated data from the following 7 public sources, totaling 164,625 tweets:
 
-**CrisisLexT6 [1]**
-> English tweets from six crisis events in 2012 and 2013, occurring in USA, Canada, and Australia. These events belong to different crisis domains such as hurricane, bombing, tornado, explosion and flood. Tweets were labeled by relatedness with each event as *on-topic* or *off-topic*.
+- **CrisisLexT6 [1]:** English tweets from six crisis events in 2012 and 2013, occurring in USA, Canada, and Australia. These events belong to different crisis domains such as hurricane, bombing, tornado, explosion and flood. Tweets were labeled by relatedness with each event as *on-topic* or *off-topic*.
 
-**CrisisLexT26 [2]**
-> Tweets from 26 crises in 2012 and 2013, occurring in countries with different languages. Tweets were labeled by informativeness, information type and source. Regarding informativeness, tweets were labeled as *related and informative*, *related - but not informative*, *not related* or *not applicable*.
+- **CrisisLexT26 [2]:** Tweets from 26 crises in 2012 and 2013, occurring in countries with different languages. Tweets were labeled by informativeness, information type and source. Regarding informativeness, tweets were labeled as *related and informative*, *related - but not informative*, *not related* or *not applicable*.
 
-**SoSItalyT4 [3]**
-> Italian tweets from four natural disasters that occurred in Italy between 2009 and 2014. These events specifically belong to the flood and earthquake crisis domains. According to the type of information tweets convey, they were labeled as *damage*, *no damage* or *not relevant*.
+- **SoSItalyT4 [3]:** Italian tweets from four natural disasters that occurred in Italy between 2009 and 2014. These events specifically belong to the flood and earthquake crisis domains. According to the type of information tweets convey, they were labeled as *damage*, *no damage* or *not relevant*.
 
-**ChileEarthquakeT1 [4]**
-> Spanish tweets from the 2010 Chilean earthquake, labeled by relatedness with the event as *relevant* or *not relevant*.
+- **ChileEarthquakeT1 [4]:** Spanish tweets from the 2010 Chilean earthquake, labeled by relatedness with the event as *relevant* or *not relevant*.
     
-**CrisisNLP_R1 [5]**
-> Tweets from 19 crises that occurred in different countries between 2013 and 2015. Tweets were annotated with a set of categories according to the information type such as *Injured or dead people*, *Missing, trapped, or found people*, *Displaced people and evacuations*, *Infrastructure and utilities damage*, among others. We used both datasets, annotated by paid workers and annotated by volunteers.  
+- **CrisisNLP_R1 [5]:** Tweets from 19 crises that occurred in different countries between 2013 and 2015. Tweets were annotated with a set of categories according to the information type such as *Injured or dead people*, *Missing, trapped, or found people*, *Displaced people and evacuations*, *Infrastructure and utilities damage*, among others. We used both datasets, annotated by paid workers and annotated by volunteers.  
 
-**CrisisMMD [6]**
-> English tweets with images collected during seven natural disasters in 2017, occurring in different countries. These events belong to different crisis domains such as hurricane, earthquake, wildfire and flood. Tweets were labeled by informativeness (tweet or image), humanitarian categories (tweet or image), and damage severity (image). Regarding informativeness, tweets were labeled as *informative* or *not informative*.
+- **CrisisMMD [6]:** English tweets with images collected during seven natural disasters in 2017, occurring in different countries. These events belong to different crisis domains such as hurricane, earthquake, wildfire and flood. Tweets were labeled by informativeness (tweet or image), humanitarian categories (tweet or image), and damage severity (image). Regarding informativeness, tweets were labeled as *informative* or *not informative*.
     
-**Ecuador-Earthquake [7]**
-> Tweets in English and Spanish about the earthquake occurred in Ecuador in 2016. Tweets were labeled by relatedness with the event as *related* or *not related*.
+- **Ecuador-Earthquake [7]:** Tweets in English and Spanish about the earthquake occurred in Ecuador in 2016. Tweets were labeled by relatedness with the event as *related* or *not related*.
 
 
 ## Messages by detected language in the Unified Multi-Crisis Dataset.
+
+As not all messages provided their language, we had to identify it. 
+We used three text-based language detection libraries, which are [FastText](https://fasttext.cc/docs/en/language-identification.html), [LangID](https://github.com/saffsd/langid.py) and [langdetect](https://github.com/Mimino666/langdetect).
+These were applied after removing urls, user mentions, hashtags, retweet symbols, emojis, emoticons and most symbols, while maintaining capitalization, numbers and specific punctuation marks (.,¡!¿?) to preserve the semantics for more accurate language detection.
+
+The assigned language corresponds to the majority of votes considering the three detectors. Otherwise the language label is *no_agreement*.
+In addition, we assigned the label *no_text* to those messages with clean text composed only of numbers, symbols or a single word with less than four characters because a text with these properties may not be sufficient to detect the language.
+
+Most messages were detected as English (83.7\%), followed by Spanish (7.3\%) and Italian (4.3\%). In addition, there was no agreement in the detection of 2.2\% of the messages. 
+
 
 | Language   ID |           Language           |  Tweets |
 |:-------------:|:----------------------------:|:-------:|
@@ -43,6 +46,8 @@ To create a multilingual and multi-domain crisis dataset, we consolidated data f
 
 
 ## Characteristics and number of tweets by hazard type of our Unified Multi-CrisisDataset.
+
+We annotate each message according to the crisis dimensions of the event that it belongs to [2].
 
 |  Hazard type  |    Category   |   Subcategory  |  Development  |   Spread  | Tweets |
 |:-------------:|:-------------:|:--------------:|:-------------:|:---------:|:------:|

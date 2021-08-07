@@ -7,20 +7,14 @@ We then consider three steps to prepare the data for further classification, whi
 
 **1. Text Cleaning**
 
-We first cleaned the text by removing urls, user mentions, hashtags, retweet symbols, 
+We removed urls, user mentions, hashtags, retweet symbols, 
 emojis, emoticons, numbers and symbols, and converted it to lowercase. 
 In the case of MT+GloVe model, we replaced these strings on the translated text by special tokens (e.g., &lt;hashtag>) 
-motivated on the GloVe script for preprocessing Twitter data [1].
-
-We then expanded English contractions to minimize the amount of Out-of-Vocabulary words when using the pretrained data models. 
-For example, *let's* is converted to *let us* and *isn't'* to *is not*.
-To accomplish this, we used a python library called **pycontractions**, 
+according to the GloVe script for preprocessing Twitter data [1].
+We then expanded English contractions (e.g., *let's* is converted to *let us* and *isn't'* to *is not*) using a python library called **pycontractions**, 
 taking the *precise* version and the semantic model *glove-twitter-100*. 
-
 In the case of the *ChileEarthquakeT1* dataset, we excluded truncated text messages and consider only those that we downloaded by tweet ID. 
-Furthermore, for the conversations from the *Ecuador-Earthquake* dataset, 
-we removed tweets starting with a user mention (i.e., replies) because it is 
-focused on conversations and our work consider single messages like the other datasets.
+For *Ecuador-Earthquake* dataset, we removed tweets starting with a user mention (i.e., replies) because it is focused on conversations and our work consider single messages like the other datasets.
 
 **2. Duplicate and Near-Duplicate Removal**
 

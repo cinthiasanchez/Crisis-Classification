@@ -16,7 +16,7 @@ To create a multilingual and multi-domain crisis dataset, we consolidated data f
 - **Ecuador-Earthquake [7]:** Tweets in English and Spanish about the earthquake occurred in Ecuador in 2016. Tweets were labeled by relatedness with the event as *related* or *not related*.
 
 
-## Messages by detected language in the Unified Multi-Crisis Dataset.
+## Language detection.
 
 As not all messages provided their language, we had to identify it. 
 We used three text-based language detection libraries, which are [FastText](https://fasttext.cc/docs/en/language-identification.html), [LangID](https://github.com/saffsd/langid.py) and [langdetect](https://github.com/Mimino666/langdetect).
@@ -45,7 +45,7 @@ Most messages were detected as English (83.7\%), followed by Spanish (7.3\%) and
 |     others    | Remaining detected languages |   472   |
 
 
-## Characteristics and number of tweets by hazard type of our Unified Multi-CrisisDataset.
+## Crisis Categorization.
 
 We annotate each message according to the crisis dimensions of the event that it belongs to [2].
 

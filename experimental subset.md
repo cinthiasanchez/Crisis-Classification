@@ -53,12 +53,13 @@ Additionally, 80.0% of these messages were published in English, 11.3% in Spanis
 With regard to the domain, 46.9% correspond to earthquakes, 38.4% to floods and 14.7% to explosions. 
 About 36.0% of messages are labeled as not related to crisis while 64.0% as related.
 
+
 |  Lang.  |   Domain   | Events |                                                   Crises                                                   | Related | Not  related |  Total |
 |:-------:|:----------:|:------:|:----------------------------------------------------------------------------------------------------------:|:-------:|:------------:|:------:|
-| English | Earthquake | 11     | Nepal, Chile 2014, Pakistan, Ecuador, Costa Rica, California,   Mexico, Bohol, Emilia, Guatemala, Iraq_Iran |  13,870 |        6,832 | 20,702 |
+| English | Earthquake | 11     | Nepal, Chile 2014, California, Pakistan, Ecuador, Mexico, Bohol, Costa Rica, Iraq_Iran, Emilia, Guatemala |  13,870 |        6,832 | 20,702 |
 |         | Explosion  | 1      | West Texas                                                                                                 |   4,415 |        4,641 |  9,056 |
-|         | Flood      | 9      | Queensland, Alberta, India, Sri Lanka, Philippines, Colorado,   Pakistan, Manila, Sardinia                 |  13,445 |       10,389 | 23,834 |
-| Spanish | Earthquake | 5      | Chile 2014, Chile 2010, Ecuador, Costa Rica, Guatemala                                                     |   5,356 |        1,394 |  6,750 |
+|         | Flood      | 9      | Alberta, Queensland, Pakistan, India, Colorado, Philippines, Sri Lanka, Manila, Sardinia                 |  13,445 |       10,389 | 23,834 |
+| Spanish | Earthquake | 5      | Chile 2014, Chile 2010, Ecuador, Guatemala, Costa Rica                                                     |   5,356 |        1,394 |  6,750 |
 |         | Explosion  | 1      | Venezuela                                                                                                  |     747 |           50 |    797 |
 | Italian | Earthquake | 2      | Emilia, L’Aquila                                                                                           |   3,260 |          705 |  3,965 |
 |         | Flood      | 2      | Sardinia, Genova                                                                                           |   1,759 |          138 |  1,897 |

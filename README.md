@@ -72,6 +72,30 @@ We annotate each message according to the crisis dimensions of the event that it
 | Meteorite     | Natural       | Others         | Instantaneous | Focalized |  1,442 |
 
 
+<details>
+    <summary>Number of tweets per domain for the top-3 languages (Click to expand)</summary>
+    
+| Language | Hazard type | Tweets |
+|:--------:|:-----------:|:------:|
+| English  | Flood       | 28,945 |
+|          | Earthquake  | 25,003 |
+|          | Hurricane   | 19,244 |
+|          | Typhoon     | 12,683 |
+|          | Explosion   | 10,853 |
+| Spanish  | Earthquake  |  9,995 |
+|          | Explosion   |    925 |
+|          | Derailment  |    609 |
+|          | Landslide   |    234 |
+|          | Typhoon     |     62 |
+| Italian  | Earthquake  |  4,721 |
+|          | Flood       |  2,165 |
+|          | Landslide   |     56 |
+|          | Hurricane   |     16 |
+|          | Collapse    |      9 |
+  
+ </details>
+    
+
 ## References
 [1] Alexandra Olteanu, Carlos Castillo, Fernando Diaz, and Sarah Vieweg. [CrisisLex: A lexicon for collecting and filtering microblogged communications in crises](https://crisislex.org/data-collections.html#CrisisLexT6). In Proceedings of the Eighth International Conference on Weblogs and Social Media, pages 376–385. AAAI, 2014.
 

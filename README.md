@@ -72,8 +72,7 @@ We annotate each message according to the crisis dimensions of the event that it
 | Meteorite     | Natural       | Others         | Instantaneous | Focalized |  1,442 |
 
 
-<details>
-    <summary>Number of tweets per domain for the top-3 languages (Click to expand)</summary>
+## Number of tweets per domain for the top-3 languages
     
 | Language | Hazard type | Tweets |
 |:--------:|:-----------:|:------:|
@@ -93,7 +92,6 @@ We annotate each message according to the crisis dimensions of the event that it
 |          | Hurricane   |     16 |
 |          | Collapse    |      9 |
   
- </details>
     
 
 ## References

@@ -71,27 +71,6 @@ We annotate each message according to the crisis dimensions of the event that it
 | Typhoon       | Natural       | Meteorological | Progressive   | Diffused  | 13,674 |
 | Meteorite     | Natural       | Others         | Instantaneous | Focalized |  1,442 |
 
-
-## Number of tweets per domain for the top-3 languages
-    
-| Language | Hazard type | Tweets |
-|:--------:|:-----------:|:------:|
-| English  | Flood       | 28,945 |
-|          | Earthquake  | 25,003 |
-|          | Hurricane   | 19,244 |
-|          | Typhoon     | 12,683 |
-|          | Explosion   | 10,853 |
-| Spanish  | Earthquake  |  9,995 |
-|          | Explosion   |    925 |
-|          | Derailment  |    609 |
-|          | Landslide   |    234 |
-|          | Typhoon     |     62 |
-| Italian  | Earthquake  |  4,721 |
-|          | Flood       |  2,165 |
-|          | Landslide   |     56 |
-|          | Hurricane   |     16 |
-|          | Collapse    |      9 |
-  
     
 
 ## References

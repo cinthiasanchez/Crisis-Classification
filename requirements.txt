@@ -7,6 +7,7 @@ spacy==2.3.1
 tqdm==4.46.0
 gensim==3.8.0
 polyglot==16.7.4
+icu==58.2
 demoji==0.2.1
 ftfy==5.8
 langid==1.1.6

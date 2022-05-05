@@ -1,6 +1,6 @@
 # Results by Target Language and Domain
 
-We show the F1-score below. For each target, the best data representation is highlighted in bold and the
+We show the F1-score below. This score is the average of 5 executions. For each target, the best data representation is highlighted in bold and the
 best scenario is also in italic.
 
 ## English

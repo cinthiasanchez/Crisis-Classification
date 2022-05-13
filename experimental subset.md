@@ -7,14 +7,15 @@ We then consider three steps to prepare the data for further classification, whi
 
 **1. Text Cleaning**
 
-We removed urls, user mentions, hashtags, retweet symbols, 
-emojis, emoticons, numbers and symbols, and converted it to lowercase. 
-In the case of MT+GloVe model, we replaced these strings on the translated text by special tokens (e.g., &lt;hashtag>) 
-according to the GloVe script for preprocessing Twitter data [1].
-We then expanded English contractions (e.g., *let's* is converted to *let us* and *isn't'* to *is not*) using a python library called **pycontractions**, 
+We expanded English contractions (e.g., *let's* is converted to *let us* and *isn't'* to *is not*) using a python library called **pycontractions**, 
 taking the *precise* version and the semantic model *glove-twitter-100*. 
 In the case of the *ChileEarthquakeT1* dataset, we excluded truncated text messages and consider only those that we downloaded by tweet ID. 
 For *Ecuador-Earthquake* dataset, we removed tweets starting with a user mention (i.e., replies) because it is focused on conversations and our work consider single messages like the other datasets.
+
+Text preprocessing to use the data models: With MUSE embeddings (trained on general corpus), we used the clean text, which consisted of removing urls, user mentions, hashtags, retweet symbols, emojis, emoticons, numbers and symbols, and converted it to lowercase. 
+In the case of MT+GloVe model, we replaced these strings on the translated text by special tokens (e.g., &lt;hashtag>) 
+according to the GloVe script for preprocessing Twitter data [1].
+As for the contextual data models (mBERT, BERT, XLM-R, XLM-T), we used the original text after expanding the English contractions. For these models, we use their respective tokenizer, that is, AutoTokenizer('model').
 
 **2. Duplicate and Near-Duplicate Removal**
 

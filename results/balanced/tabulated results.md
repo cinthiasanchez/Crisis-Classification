@@ -9,8 +9,8 @@ best scenario is also in italic.
 |   Domain   |          Scenario          |  LF  |  MT+GloVe  | MUSE |  MUSE+LF | mBERT |   MT+BERT  |    XLM-R   |    XLM-T   |
 |:----------:|:--------------------------:|:----:|:----------:|:----:|:--------:|:-----:|:----------:|:----------:|:----------:|
 | Earthquake | Monolingual & Monodomain   | 0.77 |    0.82    | 0.82 |   0.82   |  0.81 |    0.81    |  **0.84**  |    0.82    |
-|            | Monolingual & Cross-Domain | 0.84 |    0.87    | 0.86 |   0.87   |  0.88 | **_0.89_** | **_0.89_** |  **0.89**  |
-|            | Monolingual & Multi-Domain | 0.83 |    0.87    | 0.85 |   0.86   |  0.87 |  **0.89**  |    0.88    |    0.88    |
+|            | Monolingual & Cross-Domain | 0.84 |    0.87    | 0.86 |   0.87   |  0.88 | **_0.89_** | **_0.89_** | **_0.89_** |
+|            | Monolingual & Multi-Domain | 0.83 |    0.87    | 0.85 |   0.86   |  0.87 | **_0.89_** |    0.88    |    0.88    |
 | Explosion  | Monolingual & Cross-Domain | 0.89 | **_0.92_** | 0.86 |   0.89   |  0.87 |    0.86    |    0.90    | **_0.92_** |
 | Flood      | Monolingual & Monodomain   | 0.84 |    0.88    | 0.88 | **0.90** |  0.85 |    0.88    |    0.89    |    0.89    |
 |            | Monolingual & Cross-Domain | 0.82 |    0.86    | 0.84 |   0.86   |  0.84 |  **0.87**  |    0.86    |  **0.87**  |

@@ -14,8 +14,8 @@ For *Ecuador-Earthquake* dataset, we removed tweets starting with a user mention
 
 Text preprocessing and tokenization according to data representations: With MUSE embeddings (trained on general corpus), we used the clean text, which consisted of removing urls, user mentions, hashtags, retweet symbols, emojis, emoticons, numbers and symbols, and converted it to lowercase. 
 In the case of MT+GloVe model, we replaced these strings on the translated text by special tokens (e.g., &lt;hashtag>) 
-according to the GloVe script for preprocessing Twitter data [1].
-As for the contextual data models (mBERT, BERT, XLM-R, XLM-T), we used the original text after expanding the English contractions. For these models, we use their respective tokenizer, that is, AutoTokenizer('model').
+according to the [GloVe](https://nlp.stanford.edu/projects/glove/) script for preprocessing Twitter data.
+As for the contextual data models ([mBERT](https://huggingface.co/bert-base-multilingual-cased), [BERT](https://huggingface.co/bert-base-uncased), [XLM-R](https://huggingface.co/xlm-roberta-base), [XLM-T](https://huggingface.co/cardiffnlp/twitter-xlm-roberta-base)), we used the original text after expanding the English contractions. For these models, we use their respective tokenizer, that is, AutoTokenizer('model').
 
 **2. Duplicate and Near-Duplicate Removal**
 
@@ -44,7 +44,7 @@ For example, *Una explosión en Texas provocó al menos 5 muertos y más de 130 
 (***Translation:*** *An explosion in Texas caused at least 5 deaths and more than 130 injured Waco Police gave the first figure ... http://t.co/4TRPu0fO04)*. 
 
 
-**Summary of the experimental subset of data.** 
+## Summary of the experimental subset of data
 
 After these preprocessing steps, we selected the crisis events with at least 100 instances per language and domain. 
 The following table shows a summary of the resulting subset of data used in our experiments.
@@ -66,8 +66,48 @@ About 36.0% of messages are labeled as not related to crisis while 64.0% as rela
 |         | Flood      | 2      | Sardinia, Genova                                                                                           |   1,759 |          138 |  1,897 |
 
 
-## References
 
-[1] Jeffrey Pennington, Richard Socher, and Christopher D. Manning. 2014. [GloVe:
-Global Vectors for Word Representation](https://nlp.stanford.edu/projects/glove/). In Proceedings of the 2014 Conference on
-Empirical Methods in Natural Language Processing. ACL, 1532–1543.
+### Detailed training/testing partitions
+
+
+**Testing:** For each target (language and domain), we used the same testing crises across the classification scenarios.
+
+| **Lang.** | **Domain** |                                             **Crises**                                             |
+|:---------:|:----------:|:--------------------------------------------------------------------------------------------------:|
+| English   | Earthquake | Chile 2014, California, Pakistan, Ecuador, Mexico, Bohol, Costa Rica, Iraq_Iran, Emilia, Guatemala |
+|           | Explosion  | West Texas                                                                                         |
+|           | Flood      | Queensland, Pakistan, India, Colorado, Philippines, Sri Lanka, Manila, Sardinia                    |
+| Spanish   | Earthquake | Ecuador, Guatemala, Costa Rica                                                                     |
+|           | Explosion  | Venezuela                                                                                          |
+| Italian   | Earthquake | L’Aquila                                                                                           |
+|           | Flood      | Sardinia, Genova                                                                                   |
+
+
+**Training:** For each target, we show the training events used in each scenario. 
+For better readability we show these events in two tables. The first one shows the training events used in the *monolingual* scenarios, while the second one shows those of the *Cross-lingual and Multilingual* scenarios.
+The symbol “-” means that no experiments were performed.
+
+*Monolingual scenarios*
+
+| **Lang.** | **Domain** |     **Monolingual & Mono-Domain**     |                                                                                                  **Monolingual & Cross-Domain**                                                                                                 |                                                                       **Monolingual & Multi-Domain**                                                                      |
+|:---------:|:----------:|:---------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| English   | Earthquake | **Earthquakes:** Nepal                  | **Explosions:** West Texas, **Floods:** Alberta, Colorado, India, Manila, Pakistan, Philippines, Queensland, Sardinia, Sri Lanka                                                                                                  | **Earthquakes:** Nepal, **Explosions:** West Texas, **Floods:** Alberta, Colorado, India, Manila, Pakistan, Philippines, Queensland, Sardinia, Sri Lanka                    |
+|           | Explosion  |                    -                    | **Earthquakes:** Bohol, California, Chile 2014, Costa Rica, Ecuador, Guatemala, Iraq_Iran, Emilia, Mexico, Nepal, Pakistan,  **Floods:** Alberta, Colorado, India, Manila, Pakistan, Philippines, Queensland, Sardinia, Sri Lanka |                                                                                      -                                                                                      |
+|           | Flood      | **Floods:** Alberta                     | **Earthquakes:** Bohol, California, Chile 2014, Costa Rica, Ecuador, Guatemala, Iraq_Iran, Emilia, Mexico, Nepal, Pakistan,  **Explosions:** West Texas                                                                           | **Earthquakes:** Bohol, California, Chile 2014, Costa Rica, Ecuador, Guatemala, Iraq_Iran, Emilia, Mexico, Nepal, Pakistan, **Explosions:** West Texas, **Floods:** Alberta |
+| Spanish   | Earthquake | **Earthquakes:** Chile 2014, Chile 2010 | **Explosions:** Venezuela                                                                                                                                                                                                         |                                                                                      -                                                                                      |
+|           | Explosion  |                    -                    | **Earthquakes:** Chile 2010, Chile 2014, Costa Rica, Ecuador, Guatemala                                                                                                                                                           |                                                                                      -                                                                                      |
+| Italian   | Earthquake | **Earthquakes:** Emilia                 | **Floods:** Genova, Sardinia                                                                                                                                                                                                      |                                                                                      -                                                                                      |
+|           | Flood      |                    -                    | Earthquakes: Emilia, L’Aquila                                                                                                                                                                                                     |                                                                                      -                                                                                      |
+
+
+*Cross-lingual and Multilingual scenarios*
+
+| **Lang.** | **Domain** |                                          **Cross-lingual and Mono-Domain**                                         |                                                                                                 **Cross-lingual and Cross-Domain**                                                                                                |                                                                                                              **Cross-lingual and Multi-Domain**                                                                                                              |                                                                                                                    **Multi-lingual and Multi-Domain**                                                                                                                    |
+|:---------:|:----------:|:------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| Spanish   | Earthquake | **Earthquakes:** Bohol, California, Iraq_Iran, Emilia, Mexico, Nepal, Pakistan                                     | **Explosions:** West Texas, **Floods:** Alberta, Colorado, India, Manila, Pakistan, Philippines, Queensland, Sardinia, Sri Lanka                                                                                                  | **Earthquakes:** Bohol, California, Iraq_Iran, Emilia, Mexico, Nepal, Pakistan,  **Explosions:** West Texas, **Floods:** Alberta, Colorado, India, Manila, Pakistan, Philippines, Queensland, Sardinia, Sri Lanka                                            | **Earthquakes:** Bohol, California, Chile 2010, Chile 2014, Iraq_Iran, Emilia, Mexico, Nepal, Pakistan, **Explosions:** Venezuela, West Texas, **Floods:** Alberta, Colorado, India, Manila, Pakistan, Philippines, Queensland, Sardinia, Sri Lanka                      |
+|           | Explosion  | **Explosions:** West Texas                                                                                         | **Earthquakes:** Bohol, California, Chile 2014, Costa Rica, Ecuador, Guatemala, Iraq_Iran, Emilia, Mexico, Nepal, Pakistan,  **Floods:** Alberta, Colorado, India, Manila, Pakistan, Philippines, Queensland, Sardinia, Sri Lanka | **Earthquakes:** Bohol, California, Chile 2014, Costa Rica, Ecuador, Guatemala, Iraq_Iran, Emilia, Mexico, Nepal, Pakistan, **Explosions:** West Texas, **Floods:** Alberta, Colorado, India, Manila, Pakistan, Philippines, Queensland, Sardinia, Sri Lanka | **Earthquakes:** Bohol, California, Chile 2010, Chile 2014, Costa Rica, Ecuador, Guatemala, Iraq_Iran, Emilia, Mexico, Nepal, Pakistan, **Explosions:** West Texas, **Floods:** Alberta, Colorado, India, Manila, Pakistan, Philippines, Queensland, Sardinia, Sri Lanka |
+| Italian   | Earthquake | **Earthquakes:** Bohol, California, Chile 2014, Costa Rica, Ecuador, Guatemala, Iraq_Iran, Mexico, Nepal, Pakistan | **Explosions:** West Texas, **Floods:** Alberta, Colorado, India, Manila, Pakistan, Philippines, Queensland, Sardinia, Sri Lanka                                                                                                  | **Earthquakes:** Bohol, California, Chile 2014, Costa Rica, Ecuador, Guatemala, Iraq_Iran, Mexico, Nepal, Pakistan,  **Explosions:** West Texas,  **Floods:** Alberta, Colorado, India, Manila, Pakistan, Philippines, Queensland, Sardinia, Sri Lanka       | **Earthquakes:** Bohol, California, Chile 2014, Costa Rica, Ecuador, Guatemala, Iraq_Iran, Emilia, Mexico, Nepal, Pakistan, **Explosions:** West Texas, **Floods:** Alberta, Colorado, Genova, India, Manila, Pakistan, Philippines, Queensland, Sardinia, Sri Lanka     |
+|           | Flood      | **Floods:** Alberta, Colorado, India, Manila, Pakistan, Philippines, Queensland, Sri Lanka                         | **Earthquakes:** Bohol, California, Chile 2014, Costa Rica, Ecuador, Guatemala, Iraq_Iran, Emilia, Mexico, Nepal, Pakistan,  **Explosions:** West Texas                                                                           | **Earthquakes:** Bohol, California, Chile 2014, Costa Rica, Ecuador, Guatemala, Iraq_Iran, Emilia, Mexico, Nepal, Pakistan, **Explosions:** West Texas, **Floods:** Alberta, Colorado, India, Manila, Pakistan, Philippines, Queensland, Sri Lanka           | **Earthquakes:** Bohol, California, Chile 2014, Costa Rica, Ecuador, Guatemala, Iraq_Iran, Emilia, L’Aquila, Mexico, Nepal, Pakistan, **Explosions:** West Texas, **Floods:** Alberta, Colorado, India, Manila, Pakistan, Philippines, Queensland, Sri Lanka             |
+
+
+

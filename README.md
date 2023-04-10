@@ -87,3 +87,18 @@ We annotate each message according to the crisis dimensions of the event that it
 [6] Firoj Alam, Ferda Ofli, and Muhammad Imran. [CrisisMMD: Multimodal Twitter datasets from natural disasters](https://crisisnlp.qcri.org/crisismmd). In Proceedings of the 12th International AAAI Conference on Web and Social Media (ICWSM), pages 465–473. AAAI, 2018.
 
 [7] Johnny Torres and Carmen Vaca. [Cross-lingual perspectives about crisis-related conversations on Twitter](https://github.com/johnnytorres/twconvcrosslingual). In Companion Proceedings of The 2019 World Wide Web Conference, pages 255–261. ACM, 2019.
+
+## Citation
+
+If you use the data or code please cite our work: 
+
+```
+@inproceedings{sánchez2022crosslingual,
+      title={Cross-Lingual and Cross-Domain Crisis Classification for Low-Resource Scenarios}, 
+      author={Cinthia Sánchez and Hernan Sarmiento and Andres Abeliuk and Jorge Pérez and Barbara Poblete},
+      year={2023},
+      booktitle={Accepted at the International AAAI Conference on Web and Social Media (ICWSM 2023)},
+      url = {https://arxiv.org/abs/2209.02139}
+}
+```
+

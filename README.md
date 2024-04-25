@@ -93,12 +93,17 @@ We annotate each message according to the crisis dimensions of the event that it
 If you use the data or code please cite our work: 
 
 ```
-@inproceedings{sánchez2022crosslingual,
-      title={Cross-Lingual and Cross-Domain Crisis Classification for Low-Resource Scenarios}, 
-      author={Cinthia Sánchez and Hernan Sarmiento and Andres Abeliuk and Jorge Pérez and Barbara Poblete},
-      year={2023},
-      booktitle={Accepted at the International AAAI Conference on Web and Social Media (ICWSM 2023)},
-      url = {https://arxiv.org/abs/2209.02139}
+@article{Sánchez_Sarmiento_Abeliuk_Pérez_Poblete_2023,
+    title={Cross-Lingual and Cross-Domain Crisis Classification for Low-Resource Scenarios},
+    author={Sánchez, Cinthia and Sarmiento, Hernan and Abeliuk, Andres and Pérez, Jorge and Poblete, Barbara},
+    journal={Proceedings of the International AAAI Conference on Web and Social Media},
+    volume={17},
+    number={1},
+    url={https://ojs.aaai.org/index.php/ICWSM/article/view/22185},
+    DOI={10.1609/icwsm.v17i1.22185},
+    year={2023},
+    month={Jun.},
+    pages={754-765}
 }
 ```
 
